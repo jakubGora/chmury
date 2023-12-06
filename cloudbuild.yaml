@@ -4,3 +4,4 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us.gcr.io/$PROJECT_ID/angular-nginx-container']
 images: ['us.gcr.io/$PROJECT_ID/angular-nginx-container']
+

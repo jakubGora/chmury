@@ -15,7 +15,7 @@ RUN mkdir -p /var/log/app_engine
 # request to /_ah/health and any 2xx or 404 response is considered healthy.
 # Because 404 responses are considered healthy, this could actually be left
 # out as nginx will return 404 if the file isn't found. However, it is better
-# to be explicit. asdasdasdasd
+# to be explicit. asdasdasdasda
 RUN mkdir -p /usr/share/nginx/www/_ah && \
     echo "healthy" > /usr/share/nginx/www/_ah/health
 

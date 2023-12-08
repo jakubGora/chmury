@@ -7,3 +7,4 @@ steps:
     args: [ 'app', 'deploy', '--image-url', 'us.gcr.io/$PROJECT_ID/angular-nginx-container' ]
 images: ['us.gcr.io/$PROJECT_ID/angular-nginx-container']
 
+

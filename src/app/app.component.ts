@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CloudService} from "./cloud.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'chmury-app';
+  clouds = [];
+
+  constructor(private cloudService: CloudService) {}
+
+  ngOnInit() {
+    this.cloudService.getClouds().subscribe(data => {
+      this.clouds = data;
+    });
+  }
 }

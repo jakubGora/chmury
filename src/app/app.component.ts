@@ -7,12 +7,12 @@ import {CloudService} from "./cloud.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  clouds = [];
+  clouds:any = [];
 
   constructor(private cloudService: CloudService) {}
 
   ngOnInit() {
-    this.cloudService.getClouds().subscribe(data => {
+    this.cloudService.getClouds().subscribe((data: any) => {
       this.clouds = data;
     });
   }

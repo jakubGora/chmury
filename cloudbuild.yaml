@@ -1,10 +1,10 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us.gcr.io/$PROJECT_ID/angular-nginx-container', '.']
+    args: [ 'build', '-no-cache' ,'-t', 'us.gcr.io/$PROJECT_ID/angular-nginx-container', '.' ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us.gcr.io/$PROJECT_ID/angular-nginx-container']
+    args: [ 'push', 'us.gcr.io/$PROJECT_ID/angular-nginx-container' ]
   - name: 'gcr.io/cloud-builders/gcloud'
     args: [ 'app', 'deploy', '--image-url', 'us.gcr.io/$PROJECT_ID/angular-nginx-container' ]
-images: ['us.gcr.io/$PROJECT_ID/angular-nginx-container']
+images: [ 'us.gcr.io/$PROJECT_ID/angular-nginx-container' ]
 
 

@@ -1,29 +1,29 @@
 <div *ngIf="viewMode; else editable">
   <div *ngIf="currentTutorial.id">
-    <h4>Tutorial</h4>
+    <h4>Komentarz</h4>
     <div>
-      <label><strong>Title:</strong></label> {{ currentTutorial.title }}
+      <label><strong>Tytuł:</strong></label> {{ currentTutorial.title }}
     </div>
     <div>
-      <label><strong>Description:</strong></label>
+      <label><strong>Treść:</strong></label>
       {{ currentTutorial.description }}
     </div>
     <div>
       <label><strong>Status:</strong></label>
-      {{ currentTutorial.published ? "Published" : "Pending" }}
+      {{ currentTutorial.published ? "Opublikowano" : "Nie opublikowano" }}
     </div>
 
     <a
       class="badge badge-warning"
       routerLink="/tutorials/{{ currentTutorial.id }}"
     >
-      Edit
+      Edytuj
     </a>
   </div>
 
   <div *ngIf="!currentTutorial">
     <br />
-    <p>Please click on a Tutorial...</p>
+    <p>Kliknij w komentarz...</p>
   </div>
 </div>
 
@@ -32,7 +32,7 @@
     <h4>Tutorial</h4>
     <form>
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="title">Tytuł</label>
         <input
           type="text"
           class="form-control"
@@ -42,7 +42,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description">Treść</label>
         <input
           type="text"
           class="form-control"
@@ -54,7 +54,7 @@
 
       <div class="form-group">
         <label><strong>Status:</strong></label>
-        {{ currentTutorial.published ? "Published" : "Pending" }}
+        {{ currentTutorial.published ? "Opublikowany" : "Nie opublikowano" }}
       </div>
     </form>
 
@@ -63,18 +63,18 @@
       *ngIf="currentTutorial.published"
       (click)="updatePublished(false)"
     >
-      UnPublish
+      Cofnij publikacje
     </button>
     <button
       *ngIf="!currentTutorial.published"
       class="badge badge-primary mr-2"
       (click)="updatePublished(true)"
     >
-      Publish
+      Publikuj
     </button>
 
     <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
-      Delete
+      Usuń
     </button>
 
     <button
@@ -82,13 +82,13 @@
       class="badge badge-success mb-2"
       (click)="updateTutorial()"
     >
-      Update
+      Zmień
     </button>
     <p>{{ message }}</p>
   </div>
 
   <div *ngIf="!currentTutorial.id">
     <br />
-    <p>Cannot access this Tutorial...</p>
+    <p>Nie ma takiego komentarza...</p>
   </div>
 </ng-template>

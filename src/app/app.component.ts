@@ -1,19 +1,10 @@
 import { Component } from '@angular/core';
-import {CloudService} from "./cloud.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  clouds:any = [];
-
-  constructor(private cloudService: CloudService) {}
-
-  ngOnInit() {
-    this.cloudService.getClouds().subscribe((data: any) => {
-      this.clouds = data;
-    });
-  }
+  title = 'Angular 15 CRUD example';
 }
